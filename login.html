@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR FITNESS EMPIRE - Login</title>
+    <link rel="stylesheet" href="./css/mycss.css">
+    <link rel="stylesheet" href="./css/auth.css">
+    <script>
+        window.API_BASE_URL = 'http://localhost:4000/api';
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/authentication.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="/js/login.js"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <img src="Project_img/logo-4.jpg" alt="VR Fitness Logo" class="auth-logo">
+            <h2>Member Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group password-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox" id="rememberMe"> Remember me
+                    </label>
+                    <a href="forgot-password.html" class="text-link">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn-auth">Login</button>
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+            <div class="auth-footer">
+                <p>New to VR Fitness? <a href="register.html" class="text-link">Create an account</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

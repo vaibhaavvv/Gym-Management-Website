@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>VR FITNESS EMPIRE</title>
+    <link rel="icon" href="Project_img/logo-4.jpg" type="image/x-icon" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+    <!--- Bootstrap css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!--- Font awesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet">
+
+    <!-- My css-->
+    <link rel="stylesheet" href="./css/mycss.css">
+    <link rel="stylesheet" href="./css/auth.css">
+
+    <script>
+        window.API_BASE_URL = 'http://localhost:4000/api';
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/authentication.js"></script>
+    <script src="/js/config.js"></script>
+
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"> <i class="fa fa-long-arrow-up"></i></button>
+
+    <!-- Navbar-->
+
+    <header class="fixed-top bg-light">
+        <nav class="navbar navbar-expand-md">
+            <a href="index.html">
+                <img src="Project_img/logo-4.jpg" alt="Website Logo" class="logo">
+            </a>
+            <a class="navbar-brand" href="index.html">VR FITNESS EMPIRE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="text-dark">X</span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./services.html">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./gallry.html">GALLERY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">CONTACT</a>
+                    </li>
+                </ul>
+                <div class="auth-buttons">
+                    <div id="user-greeting" style="display:none; margin-right: 10px;">
+                        <span>Welcome, <strong id="username-display"></strong>!</span>
+                    </div>
+                    <a href="login.html" class="button" id="login-btn">Login</a>
+                    <a href="register.html" class="button" id="register-btn">Register</a>
+
+                    <a href="#" class="button" id="logout-btn" style="display:none;">Logout</a>
+                    <a href="dashboard.html" class="button" id="dashboard-btn" style="display:none;">Dashboard</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--End Navbar -->
+
+    <!--- Slider -->
+        
+<section class="hero-slider">
+    <div class="hero-slide slider_1">
+      <div class="slider-overlay slider-1-overlay"></div>
+      <div class="container">
+      <div class="slide-content text-white text-white">
+            <h2 class="h1 text-white">“You can have results or excuses, but not both.”</h2>
+            <p class="hidden-xs"> — Arnold Schwarzenegger</p>
+            <button class="btn "><a href="contact.html"> Contact Now </a></button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide slider_2">
+      <div class="slider-overlay slider-2-overlay"></div>
+      <div class="container">
+      <div class="slide-content text-white">
+            <h2 class="h1 text-white">“What hurts today makes you stronger tomorrow.” </h2>
+            <p class="hidden-xs"> — Jay Cutler</p>
+            <button class="btn "><a href="contact.html"> Contact Now </a></button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide slider_3">
+      <div class="slider-overlay slider-3-overlay"></div>
+      <div class="container">
+      <div class="slide-content text-white">
+            <h2 class="h1 text-white">“The last three or four reps is what makes the muscle grow."</h2>
+            <p class="hidden-xs"> — Arnold Schwarzenegger</p>
+            <button class="btn "><a href="contact.html"> Contact Now </a></button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide slider_4">
+      <div class="slider-overlay slider-4-overlay"></div>
+      <div class="container">
+      <div class="slide-content text-white">
+            <h2 class="h1 text-white">“If it doesn’t challenge you, it won’t change you.” </h2>
+            <p class="hidden-xs"> — Fred Devito</p>
+            <button class="btn "><a href="contact.html"> Contact Now </a></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- end slider-->
+
+    <!--- about img -->
+
+    <section class="section-3 ">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-sm-6 dj-div-1 " data-aos="fade-up">
+                    <div>
+                        <div>
+                            <h1 class="font-weight-bold">WELCOME TO <br> VR FITNESS EMPIRE UNISEX GYM </h1>
+                        </div>
+                        <div>
+                            <p> <b> VR FITNESS EMPIRE UNISEX GYM </b> is a professional fitness training center. We
+                                provide
+                                all kinds
+                                of fitness training and we have all modern instruments.</p>
+
+                        </div>
+                        <div class="dj-div-p">
+                            <p> VR Fitness Empire is best gym in Lucknow, Uttar Pradesh. VR Fitness Empire is a fitness centre that
+                                provides
+                                the community a family orientated, motivational, friendly and professional environment
+                                to
+                                improve health and well being.</p>
+
+                            <p> Situated conveniently near Shahi Guest House, Faizullaganj. VR Fitness Empire Gym
+                                offers a world class facility coupled with experienced and fully accredited training
+                                staff,
+                                focused on providing members all the necessary tools to achieve their
+                                health and fitness goals.</p>
+                        </div>
+                        <div> <button class="btn "><a href="about.html"> Know More </a></button></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 " data-aos="fade-up">
+                    <img src="./Project_img/about-3.jpg" alt="dj" class="img-fluid" width="100%">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--- about end -->
+
+    <!-- teams section -->
+
+    <section class="section-5">
+    <div class="team">
+        <div class="team__wrapper">
+            <div class="team__text animate-team">
+                <p class="topline">Private Coaching</p>
+                <h1>Meet our Trainers</h1>
+                <p class="team_desc">
+                    All our personal trainers are well experienced.
+                    Each trainer specializes in strength and mobility workouts.
+                </p>                   
+            </div>
+            <div class="team__text animate-team">
+                <p class="topline">Free Trail</p>
+                <h1>7 day trial</h1>
+                <p class="team_desc">
+                    You can work with each trainer for up to 7 days to see if they are a good fit for your goals.
+                </p>                   
+            </div>
+            <div class="team__card animate-team">
+                <p>Vishal</p>
+                <img src="./Project_img/trainer-1.jpg" alt="person" class="team__img" />
+            </div>
+            <div class="team__card animate-team">
+                <p>Raghav</p>
+                <img src="./Project_img/trainer-2.jpg" alt="person" class="team__img" />
+            </div>
+        </div>
+    </div>
+
+    <!-- teams section end -->
+
+    <!-- Our Services -->
+
+    <section id="services" class="text-center services ">
+        <h3 class="section-title text-uppercase font-weight-bolder  p-4 ">
+            Our Services
+        </h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 " data-aos="fade-up">
+                    <div class="card mb-4">
+                        <img src="./Project_img/service-1.jpg" alt="" class="card-img-top">
+                        <div class="card-body py-5">
+                            <h3 class="card-title font-weight-bolder  pb-4">
+                                Personal Training
+                            </h3>
+                            <p class="card-text text-muted px-4">Achieve your fitness goals with <b>expert guidance!</b> 
+                                Whether you're looking to build strength, lose weight, or improve overall health, 
+                                our personalized training programs are designed for your unique needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 " data-aos="fade-up">
+                    <div class="card mb-4">
+                        <img src="./Project_img/service-2.jpg" alt="" class="card-img-top">
+                        <div class="card-body py-5">
+                            <h3 class="card-title font-weight-bolder  pb-4">
+                                Body Building
+                            </h3>
+                            <p class="card-text text-muted px-4">
+                                "Strength. Discipline. Transformation. Embrace the power of bodybuilding!"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 " data-aos="fade-up">
+                    <div class="card mb-4">
+                        <img src="./Project_img/service-3.jpg" alt="" class="card-img-top">
+                        <div class="card-body py-5">
+                            <h3 class="card-title font-weight-bolder  pb-4">
+                                Cardio
+                            </h3>
+                            <p class="card-text text-muted px-4">"Cardio is the key to a healthy heart and an energized life! 
+                                Make it a fun part of your routine and feel the difference in your mind and body!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center m-auto">
+                    <button class="btn "><a href="services.html"> Load More </a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Our Services -->
+
+    <!-- Membership section -->
+
+    <div class="memberships">
+        <h1 class="animate-membership">View Our Plans</h1>
+        <p class="membership__desc animate-membership">Get started today and receive 20% off on your first month. Get Healthy, Get Promo.</p>
+        <div class="membership__wrapper">
+            <div class="membership__card animate-card">
+                <div class="membership__title">
+                    <i class="fas fa-dumbbell card-icon"></i>
+                    <h3>Strength + Cardio </h3>
+                </div>
+                <div class="membership__perks">
+                    <p> <b>Per Month</b> </p>
+                    <p>We provide you 30 days membership only in..</p>
+                    <p> <b>&#8377;599/Per Month</b> </p>
+                    <p>_________________________________________</p>
+                </div>
+                <div class="membership__perks">
+                    <p> <b>3 Months</b> </p>
+                    <p>We provide you 3 months membership only in..</p>
+                    <p> <b>&#8377;1599/3 Months</b> </p>
+                    <p>_________________________________________</p>
+                </div>
+                <div class="membership__perks">
+                    <p> <b>6 Months</b> </p>
+                    <p>We provide you 6 months membership only in..</p>
+                    <p> <b>&#8377;2999/6 Months</b> </p>
+                    <p>_________________________________________</p>
+                </div>
+                <div class="membership__perks">
+                    <p> <b>1 Year</b> </p>
+                    <p>We provide you 1 year membership only in..</p>
+                    <p> <b>&#8377;4999/1 Year</b> </p>
+                    <p>_________________________________________</p>
+                </div>
+                <a href="contact.html" class="button">Contact Now</a>
+            </div>
+            <div class="membership__card animate-card">
+                <div class="membership__title">
+                    <i class="fas fa-bicycle card-icon"></i>
+                    <h3>Strength + Zumba </h3>
+                </div>
+                <div class="membership__perks">
+                    <p> <b>Per Month</b> </p>
+                    <p>We provide you 30 days membership only in..</p>
+                    <p> <b>&#8377;799 + &#8377;599/Per Month</b> </p>
+                    <p>_________________________________________</p>
+                </div>
+                <div class="membership__perks">
+                    <p> <b>3 Months</b> </p>
+                    <p>We provide you 3 months membership only in..</p>
+                    <p> <b>&#8377;2199 + &#8377;1599/3 Months</b> </p>
+                    <p>_________________________________________</p>
+                </div>
+                <div class="membership__perks">
+                    <p> <b>6 Months</b> </p>
+                    <p>We provide you 6 months membership only in..</p>
+                    <p> <b>&#8377;3999 + &#8377;2999/6 Months</b> </p>
+                    <p>_________________________________________</p>
+                </div>
+                <div class="membership__perks">
+                    <p> <b>1 Year</b> </p>
+                    <p>We provide you 1 year membership only in..</p>
+                    <p> <b>&#8377;6999 + &#8377;4999/1 Year</b> </p>
+                    <p>_________________________________________</p>
+                </div>
+                <a href="contact.html" class="button">Contact Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Membership section -->
+
+    <!-- Start  Now-->
+
+    <section class="section-5  ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 training " data-aos="fade-up">
+                    <h1 class="pp  ">Start Your Training Today</h1>
+                    <p> VR Fitness Empire is best gym in Lucknow, Uttar Pradesh. VR Fitness Empire is a fitness centre that
+                        provides
+                        the community a family orientated, motivational, friendly and professional environment
+                        to
+                        improve health and well being.</p>
+
+                    <p> Situated conveniently near Shahi Guest House, Faizullaganj. VR Fitness Empire Gym
+                        offers a world class facility coupled with experienced and fully accredited training
+                        staff.
+                        They are focused on providing members all the necessary tools to achieve their
+                        health and fitness goals.</p>
+                    <button class="btn "><a href="gallry.html"> View Gallery</a></button>
+                </div>
+                <div class="col-lg-6 " data-aos="fade-up">
+                    <img src="./Project_img/banner-6.jpg" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end  -->
+
+    <!-- fedback -->
+
+    <section class="section-3">
+        <div class="container fedback">
+            <div class="row" data-aos="fade-up">
+                <div class='col-md-10 offset-md-1 text-center mb-5 mt-5'>
+                    <h2>OUR CLIENT REVIEWS</h2>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-10 offset-md-1' data-aos="fade-up">
+                    <div class="carousel slide sq-crousal4" data-ride="carousel" id="sq-crousal4">
+                        <!-- Bottom Carousel Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#sq-crousal4" data-slide-to="0" class="active"></li>
+                            <li data-target="#sq-crousal4" data-slide-to="1"></li>
+                            <li data-target="#sq-crousal4" data-slide-to="2"></li>
+                        </ol>
+                        <!-- Carousel Slides / Quotes -->
+                        <div class="carousel-inner">
+                            <!-- Quote 1 -->
+                            <div class="carousel-item active">
+                                <blockquote>
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1 d-md-flex d-block text-center "
+                                            data-aos="fade-up">
+                                            <img class="rounded-circle"
+                                                src="Project_img/review-1.jpg"
+                                                style="width: 100px;height:100px;">
+                                            <div class="feedback-text pl-3">
+                                                <p>This gym has completely transformed my fitness journey. The trainers are incredibly 
+                                                    knowledgeable, and the atmosphere is always motivating. I’ve tried many gyms, but this 
+                                                    one stands out. Highly recommend!
+                                                </p>
+                                                <small>- Vaibhav Kamal </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </blockquote>
+                            </div>
+                            <!-- Quote 2 -->
+                            <div class="carousel-item">
+                                <blockquote>
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1 d-md-flex d-block text-center "
+                                            data-aos="fade-up">
+                                            <img class="rounded-circle"
+                                                src="Project_img/review-3.jpg"
+                                                style="width: 100px;height:100px;">
+                                            <div class="feedback-text pl-3">
+                                                <p>The staff here is so friendly and encouraging. They genuinely care about your 
+                                                    progress. I’ve seen amazing results in just a few months! Whether you're a beginner 
+                                                    or a fitness enthusiast, this gym caters to everyone.
+                                                </p>
+                                                <small>- Shivam Singh </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </blockquote>
+                            </div>
+                            <!-- Quote 3 -->
+                            <div class="carousel-item">
+                                <blockquote>
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1 d-md-flex d-block text-center "
+                                            data-aos="fade-up">
+                                            <img class="rounded-circle" src="./img/face3.jpg"
+                                                style="width: 100px;height:100px;">
+                                            <div class="feedback-text pl-3">
+                                                <p>I love coming here because of the positive energy. The trainers push you to be your best, 
+                                                    and the members are super supportive. It feels like a second home. My strength and stamina 
+                                                    have improved significantly.
+                                                </p>
+                                                <small>- Meena Malhotra </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <!-- Carousel Buttons Next/Prev -->
+                        <!-- Left and right controls -->
+                        <a class="carousel-control-prev" href="#sq-crousal4" data-slide="prev">
+                            <span class="fa fa-angle-left"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#sq-crousal4" data-slide="next">
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End fedback -->
+
+    <section class="section-6">
+        <!-- Footer -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="footer-cta pt-5 pb-5">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="cta-text">
+                                    <h4>Find us</h4>
+                                    <span> Faizullaganj, Lucknow, Uttar Pradesh </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="fas fa-phone"></i>
+                                <div class="cta-text">
+                                    <h4>Call us</h4>
+                                    <span> +91 9369-206143 , +91 8840-179581 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="far fa-envelope-open"></i>
+                                <div class="cta-text">
+                                    <h4>Mail us</h4>
+                                    <span>kamalvaibhav111kv@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-content pt-5 pb-5">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 mb-50">
+                            <div class="footer-widget">
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src="Project_img/vlogo-1.png"
+                                            class="img-fluid" alt="logo"></a>
+                                </div>
+                                <div class="footer-text">
+                                    <p> VR FITNESS EMPIRE UNISEX GYM is a professional fitness training center. We provide
+                                        all kinds of fitness training and we have all modern instruments.
+                                    </p>
+                                </div>
+                                <div class="footer-social-icon">
+                                    <span>Follow us</span>
+                                    <a href="https://www.instagram.com/vrfitnessempire" target="_blank"><i class="fab fa-instagram instagram-bg"></i></a>
+                                    <a href="https://chat.whatsapp.com/KhmZDQMwE8X6x3XpQvig1C" target="_blank"><i class="fab fa-whatsapp whatsapp-bg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                            <div class="footer-widget">
+                                <div class="footer-widget-heading">
+                                    <h3>SERVICES</h3>
+                                </div>
+                                <ul>
+                                    <li><a href="https://en.wikipedia.org/wiki/Exercise" target="_blank">Sports Workout </a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Bodybuilding" target="_blank">Body Building</a></li>
+                                    <li><a href="#" target="_blank">Ladies Batches</a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Aerobic_exercise" target="_blank">Cardio</a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Personal_trainer" target="_blank">Personal Training</a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Weight_gain" target="_blank">Weight Gain</a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Weight_loss" target="_blank">Weight loss </a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Diet_(nutrition)" target="_blank">Diet Nutrition</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                            <div class="footer-widget">
+                                <div class="footer-widget-heading">
+                                    <h3>Subscribe</h3>
+                                </div>
+                                <div class="footer-text mb-25">
+                                    <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
+                                </div>
+                                <div class="subscribe-form">
+                                    <form action="#">
+                                        <input type="text" placeholder="Email Address">
+                                        <button><i class="fab fa-telegram-plane"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                            <div class="copyright-text">
+                                <p>Copyright &copy; 2025, All Right Reserved | Design by <a href="http://linkedin.com/in/vaibhav-kamal-14b502323" target="_blank">Vaibhav Kamal, Lucknow
+                                </a></p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="#">Terms</a></li>
+                                    <li><a href="#">Privacy</a></li>
+                                    <li><a href="#">Policy</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Footer -->
+    </section>
+    
+    <!-- End  -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script src="./js/myjs.js"></script>
+    <script>
+        $('.hero-slider').slick({
+    slidesToShow: 1,
+    prevArrow: $(".themes-carousel-controls .prev"),
+    nextArrow: $(".themes-carousel-controls .next"),
+    autoplay: true,
+    dots: false,
+    autoplaySpeed: 7000,
+    fade: true
+  });
+    </script>
+
+<script>
+// Check auth status and update UI
+async function checkAuthStatus() {
+    try {
+        const response = await axios.get('http://localhost:4000/api/auth/is-Auth', {
+            withCredentials: true
+        });
+        
+        if (response.data.success) {
+            document.getElementById('login-btn').style.display = 'none';
+            document.getElementById('register-btn').style.display = 'none';
+            document.getElementById('logout-btn').style.display = 'inline-block';
+            document.getElementById('dashboard-btn').style.display = 'inline-block';
+        }
+    } catch (error) {
+        console.log('User not logged in');
+    }
+}
+
+// Logout functionality
+document.getElementById('logout-btn').addEventListener('click', async (e) => {
+    e.preventDefault();
+    try {
+        await axios.post('http://localhost:4000/api/auth/logout', {}, {
+            withCredentials: true
+        });
+        window.location.href = 'index.html';
+    } catch (error) {
+        console.error('Logout error:', error);
+    }
+});
+
+// Run on page load
+checkAuthStatus();
+</script>
+</body>
+
+</html>

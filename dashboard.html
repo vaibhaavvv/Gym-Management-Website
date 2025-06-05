@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>VR FITNESS EMPIRE - Dashboard</title>
+    <link rel="icon" href="Project_img/logo-4.jpg" type="image/x-icon" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/mycss.css">
+    
+    <script>
+        window.API_BASE_URL = 'http://localhost:4000/api';
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/authentication.js"></script>
+    <script src="./js/dashboard.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="fixed-top bg-light shadow-sm">
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="Project_img/logo-4.jpg" alt="Website Logo" class="logo me-2">
+                    <span>VR FITNESS EMPIRE</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./services.html">SERVICES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./gallry.html">GALLERY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about.html">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">CONTACT</a>
+                        </li>
+                        <!--<li class="nav-item">
+                            <a class="nav-link active" href="./dashboard.html">DASHBOARD</a>
+                        </li>-->
+                    </ul>
+                    
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-primary dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown">
+                                <i class="fas fa-user-circle me-1"></i>
+                                <span id="username-display">Account</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <!--<li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                                <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog me-2"></i>Settings</a></li>-->
+                                <li><hr class="dropdown-divider"></li>
+                                <li><button class="dropdown-item text-danger" id="logout-btn"><i class="fas fa-sign-out-alt me-2"></i>Logout</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="dashboard-section">
+        <div class="container py-5">
+            <div class="dashboard-header text-center mb-5">
+                <h1 class="display-4 fw-bold text-primary">Member Dashboard</h1>
+                <div class="user-welcome p-4 rounded-3 shadow-sm bg-white mt-4" id="user-welcome">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Workout Stats Card -->
+                <div class="dashboard-card">
+                    <div class="card-icon mb-3">
+                        <i class="fas fa-dumbbell fa-3x text-primary"></i>
+                    </div>
+                    <h3>Workout Stats</h3>
+                    <p>Track your workout progress and see your achievements.</p>
+                    <a href="workouts.html" class="btn btn-primary">View Details</a>
+                </div>
+                
+                <!-- Nutrition Card -->
+                <div class="dashboard-card">
+                    <div class="card-icon mb-3">
+                        <i class="fas fa-utensils fa-3x text-success"></i>
+                    </div>
+                    <h3>Nutrition</h3>
+                    <p>Manage your diet plans and track your nutrition intake.</p>
+                    <a href="nutrition.html" class="btn btn-success">View Details</a>
+                </div>
+                
+                <!-- Progress Card -->
+                <div class="dashboard-card">
+                    <div class="card-icon mb-3">
+                        <i class="fas fa-chart-line fa-3x text-info"></i>
+                    </div>
+                    <h3>Progress</h3>
+                    <p>View your fitness journey progress with detailed charts.</p>
+                    <a href="progress.html" class="btn btn-info">View Details</a>
+                </div>
+                
+                <!-- VR Sessions Card -->
+                <div class="dashboard-card">
+                    <div class="card-icon mb-3">
+                        <i class="fas fa-vr-cardboard fa-3x text-warning"></i>
+                    </div>
+                    <h3>VR Sessions</h3>
+                    <p>Schedule and manage your VR fitness sessions.</p>
+                    <a href="vr-sessions.html" class="btn btn-warning">View Details</a>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="quick-actions mt-5 pt-4 border-top">
+                <h2 class="h4 mb-4">Quick Actions</h2>
+                <div class="d-flex flex-wrap gap-3">
+                    <button class="btn btn-outline-primary">
+                        <i class="fas fa-plus me-2"></i>New Workout
+                    </button>
+                    <button class="btn btn-outline-success">
+                        <i class="fas fa-utensils me-2"></i>Add Meal
+                    </button>
+                    <button class="btn btn-outline-info">
+                        <i class="fas fa-calendar-plus me-2"></i>Book Session
+                    </button>
+                    <button class="btn btn-outline-secondary">
+                        <i class="fas fa-cog me-2"></i>Settings
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <section class="section-6">
+        <!-- Footer -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="footer-cta pt-5 pb-5">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="cta-text">
+                                    <h4>Find us</h4>
+                                    <span> Faizullaganj, Lucknow, Uttar Pradesh </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="fas fa-phone"></i>
+                                <div class="cta-text">
+                                    <h4>Call us</h4>
+                                    <span> +91 9369-206143 , +91 8840-179581 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="far fa-envelope-open"></i>
+                                <div class="cta-text">
+                                    <h4>Mail us</h4>
+                                    <span>kamalvaibhav111kv@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-content pt-5 pb-5">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 mb-50">
+                            <div class="footer-widget">
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src="Project_img/vlogo-1.png"
+                                            class="img-fluid" alt="logo"></a>
+                                </div>
+                                <div class="footer-text">
+                                    <p> VR FITNESS EMPIRE UNISEX GYM is a professional fitness training center. We provide
+                                        all kinds of fitness training and we have all modern instruments.
+                                    </p>
+                                </div>
+                                <div class="footer-social-icon">
+                                    <span>Follow us</span>
+                                    <a href="https://www.instagram.com/vrfitnessempire" target="_blank"><i class="fab fa-instagram instagram-bg"></i></a>
+                                    <a href="https://chat.whatsapp.com/KhmZDQMwE8X6x3XpQvig1C" target="_blank"><i class="fab fa-whatsapp whatsapp-bg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                            <div class="footer-widget">
+                                <div class="footer-widget-heading">
+                                    <h3>SERVICES</h3>
+                                </div>
+                                <ul>
+                                    <li><a href="https://en.wikipedia.org/wiki/Exercise" target="_blank">Sports Workout </a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Bodybuilding" target="_blank">Body Building</a></li>
+                                    <li><a href="#" target="_blank">Ladies Batches</a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Aerobic_exercise" target="_blank">Cardio</a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Personal_trainer" target="_blank">Personal Training</a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Weight_gain" target="_blank">Weight Gain</a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Weight_loss" target="_blank">Weight loss </a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Diet_(nutrition)" target="_blank">Diet Nutrition</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                            <div class="footer-widget">
+                                <div class="footer-widget-heading">
+                                    <h3>Subscribe</h3>
+                                </div>
+                                <div class="footer-text mb-25">
+                                    <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
+                                </div>
+                                <div class="subscribe-form">
+                                    <form action="#">
+                                        <input type="text" placeholder="Email Address">
+                                        <button><i class="fab fa-telegram-plane"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                            <div class="copyright-text">
+                                <p>Copyright &copy; 2025, All Right Reserved | Design by <a href="http://linkedin.com/in/vaibhav-kamal-14b502323" target="_blank">Vaibhav Kamal, Lucknow
+                                </a></p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="#">Terms</a></li>
+                                    <li><a href="#">Privacy</a></li>
+                                    <li><a href="#">Policy</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Footer -->
+    </section>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Initialize dashboard -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize dropdowns
+            const dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+            const dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+                return new bootstrap.Dropdown(dropdownToggleEl);
+            });
+            
+            // Add logout event listener
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                logout();
+            });
+            
+            // Check authentication status
+            updateNavbar();
+        });
+    </script>
+</body>
+</html>

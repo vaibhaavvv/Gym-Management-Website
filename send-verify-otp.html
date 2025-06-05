@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR FITNESS EMPIRE - Send Verify OTP</title>
+    <link rel="stylesheet" href="./css/mycss.css">
+    <link rel="stylesheet" href="./css/auth.css">
+    <script>
+        window.API_BASE_URL = 'http://localhost:4000/api';
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/authentication.js"></script>
+    <script src="/js/config.js"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <img src="Project_img/logo-4.jpg" alt="VR Fitness Logo" class="auth-logo">
+            <h2>Send Verify OTP</h2>
+            <form id="sendVerifyForm">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <button type="submit" class="btn-auth">Send OTP</button>
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+            <div id="otpSection" style="display: none;">
+                <h3>OTP Verification</h3>
+                <button onclick="sendOTP()">Send OTP</button>
+                <input type="text" id="otpInput" placeholder="Enter OTP" />
+                <button onclick="verifyOTP()">Verify</button>
+                <p id="otpMessage"></p>
+            </div>
+            
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html" class="text-link">Sign in</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="/js/send-verify-otp.js"></script>
+</body>
+</html>
